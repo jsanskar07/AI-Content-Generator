@@ -4,6 +4,6 @@ export default {
   dialect: "postgresql", // "mysql" | "sqlite" | "postgresql"
   schema: "./utils/schema.tsx",
   dbCredentials : {
-    url: 'postgresql://Ai-contenr_owner:eufWYK0Q2rsZ@ep-wild-morning-a1zp7lw4.ap-southeast-1.aws.neon.tech/Ai-contenr?sslmode=require'
+    url: NEXT_PUBLIC_DRIZZLE_DB_URL
   }
 };
