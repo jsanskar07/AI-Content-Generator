@@ -7,7 +7,7 @@ import { currentUser } from "@clerk/nextjs/server";
 
 
 export async function getUserById(email: SelectUser['createdBy']): Promise<Payment[]> {
-    const data =  await db.select().from(AiOutput).where(eq(AiOutput.createdBy, email));
+    const data =  await db.select().from(AiOutput).where(eq(AiOutput.createdBy, email)).orderBy(AiOutput.id);
     return data;
 }
 export async function getUserData(email : string){
