@@ -1,30 +1,12 @@
 "use client"
 import React, { useEffect } from 'react'
 import Image from 'next/image'
-import { FileClock, Home, Settings, WalletCards } from 'lucide-react'
+import { MenuList } from '../_contents'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import UsageTrack from './UsageTrack'
 
-function SideNav() {
-
-    const MenuList = [
-        {
-            name: 'Home',
-            icon: Home,
-            path: '/dashboard'
-        },
-        {
-            name: 'History',
-            icon: FileClock,
-            path: '/dashboard/history'
-        },
-        {
-            name: 'Billing',
-            icon: WalletCards,
-            path: '/dashboard/billing'
-        },
-    ]
+function SideNav() {   
 
     const path = usePathname();
     return (
