@@ -44,7 +44,7 @@ function CreateNewContent(props:PROPS) {
     //console.log(result.response.text());
     const email = user?.primaryEmailAddress?.emailAddress
     const tempData = await getUserData(email ?? "")
-    const plan = tempData === null ? "free" : tempData[0].userPlan
+    const plan = tempData === null || tempData[0] === undefined? "free" : tempData[0].userPlan
     setAiOutput(result?.response.text());
     await saveInDb(FormData, selectedTemplate?.slug, result?.response.text(),email,plan)
     

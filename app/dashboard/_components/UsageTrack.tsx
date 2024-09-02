@@ -32,7 +32,7 @@ function UsageTrack() {
 
     const getTotalUsage=(result:any)=>{
         let total:number=0
-        let plan:string= result[0].userPlan
+        let plan:string= result[0] === undefined ? "free" : result[0].userPlan
         result.forEach((value: { aiResponse: string | any[] })=>{
             total = total + Number(value.aiResponse?.length) 
         })
